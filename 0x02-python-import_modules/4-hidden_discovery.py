@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 if __name__ == "__main__":
     import hidden_4
-    list = dir(hidden)
-    for i in range(len(list)):
-        if (list[i][0] != '-'):
-            print(list[i])
+    arr = dir()
+    for x in range(0, len(arr)):
+        if arr[x][0:2] != "--":
+            print("{}".format(arr[x]))
