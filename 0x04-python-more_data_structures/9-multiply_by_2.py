@@ -1,4 +1,6 @@
 #!/usr/bin/python3
 def multiply_by_2(a_dictionary):
-    if a_dictionary:
-        return (dict((a, b*2) for a, b in a_dictionary.items()))
+    n_dictionary = {}
+    for x in a_dictionary:
+        n_dictionary[x] = a_dictionary[x] * 2
+    return n_dictionary
