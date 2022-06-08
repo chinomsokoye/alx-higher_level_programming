@@ -1,16 +1,15 @@
 #!/usr/bin/python3
 def roman_to_int(roman_string):
-    val = 0
-    if (roman_string and isinstance(roman_string, str)):
-        r_dict = {'D': 500, 'C': 100, 'M': 1000, 'L': 50, 'X': 10, 'V': 5,
-                  'I': 1}
-        r_list = [r_dict.get[i] for i in roman_string]
-        for idx, char in enumerate(r_list):
-            if (idx < len(r_list) - 1):
-                if r_list[idx + 1] > char:
-                    val -= char
-                else:
-                    val += char
-            else:
-                val += char
-    return val
+    if not roman_string or type(roman_string) != str:
+        return 0
+    roman_dict = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500,
+                  'M': 1000}
+    roman_n = 0
+    for x in range(len(roman_string)):
+        if x > 0 and roman_dict[roman_string[x]] > roman_dict[
+                roman_string[x - 1]]:
+            roman_n += roman_dict[roman_string[x]] - 2 * roman_dict[
+                roman_string[x - 1]]
+        else:
+            roman_n += roman_dict[roman_string[x]]
+    return roman_n
