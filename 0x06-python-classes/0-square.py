@@ -1,4 +1,10 @@
 #!/usr/bin/python3
+"""
+Module import 0-square
+Define a square class
+"""
+
+
 class Square:
-    """Represents and creates the summary line of  an empty square class."""
+    """Empty class square"""
     pass
