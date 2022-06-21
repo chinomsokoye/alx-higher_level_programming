@@ -2,3 +2,6 @@
 class Square:
     """Represents a square, an empty square."""
     pass
+
+
+square = Square()
