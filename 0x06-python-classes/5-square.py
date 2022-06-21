@@ -18,12 +18,12 @@ class Square:
     area(self)
     print(self)
     """
-    def __init__(self, size=0)
-    """Initialize square
-    Attributes:
-    size (int) : size of square, defaults to 0 if none
-    """
-    self.__size = size
+    def __init__(self, size=0):
+        """Initialize square
+        Attributes:
+        size (int) : size of square, defaults to 0 if none
+        """
+        self.size = size
 
     @property
     def size(self):
