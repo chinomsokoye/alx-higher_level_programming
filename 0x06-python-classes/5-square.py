@@ -59,8 +59,10 @@ class Square:
         """
         Prints squares of #'s
         """
-        if (self.size):
-            for i in range(self.size):
-                print("#" * self.size, end='')
+        if self.__size == 0:
+            print()
+        else:
+            for i in range(0, self.__size):
+                for j in range(0, self.__size):
+                    print("#", end="")
                 print()
-        print()
