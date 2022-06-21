@@ -40,7 +40,7 @@ class Square:
         Args:
         value: sets size to value if int and >= 0
         """
-        if type(valus) is not int:
+        if type(value) is not int:
             raise TypeError("size must be an integer")
         elif value < 0:
             raise ValueError("size must be >= 0")
@@ -59,10 +59,4 @@ class Square:
         """
         Prints squares of #'s
         """
-        if self.__size == 0:
-            print()
-        else:
-            for i in range(0, self.__size):
-                for j in range(0, self.__size):
-                    print("#", end="")
-                print()
+        print("\n".join(["#" * self.__size for rows in range(self.__size)]))
