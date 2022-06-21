@@ -4,5 +4,4 @@ class Square:
     pass
 
 
-x = Square()
-x.name = "square"
+square = Square()
