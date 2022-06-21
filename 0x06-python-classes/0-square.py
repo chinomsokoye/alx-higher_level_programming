@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 class Square:
-    """Represents a square."""
-    def square(self):
-        """Creates an empty square."""
-        pass
+    """Represents a square, an empty square."""
+    pass
+
+
+my_square = Square()
