@@ -23,7 +23,7 @@ class Square:
     Attributes:
     size (int) : size of square, defaults to 0 if none
     """
-    self.size = size
+    self.__size = size
 
     @property
     def size(self):
