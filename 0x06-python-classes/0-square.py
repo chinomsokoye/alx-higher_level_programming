@@ -2,3 +2,7 @@
 class Square:
     """Creates an empty square."""
     pass
+
+
+square = Square()
+print(square)
