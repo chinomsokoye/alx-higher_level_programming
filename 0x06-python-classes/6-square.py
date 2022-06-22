@@ -31,14 +31,16 @@ class Square:
 
     @property
     def size(self):
-        """Getter
+        """
+        Getter
         Return: size
         """
         return self.__size
 
     @size.setter
     def size(self, value):
-        """Setter
+        """
+        Setter
         Args:
         value: sets to int and >= 0
         """
@@ -51,20 +53,22 @@ class Square:
 
     @property
     def position(self):
-        """Getter
+        """
+        Getter
         Return: position
         """
         return self.__position
 
     @position.setter
     def position(self, value):
-        """Setter
+        """
+        Setter
         Args:
         value: sets position to tuple for value of positive integers, 2
         """
-        if type(value) is not tuple or len(value) != 2 or type(value[0]) \
-           is not int or type(value[1]) is not int or value[0] < 0 \
-           or value[1] < 0:
+        if type(value) is not tuple or len(value) != 2 or \
+           type(value[0]) is not int or type(value[1]) is not int or \
+           value[0] < 0 or value[1] < 0:
             raise TypeError("position must be a tuple of 2 positive integers")
         else:
             self.__position = value
@@ -77,7 +81,6 @@ class Square:
         return self.__size ** 2
 
     def my_print(self):
-        """Defines the print to stdout #'s"""
         if self.__size == 0:
             print("")
         else:
