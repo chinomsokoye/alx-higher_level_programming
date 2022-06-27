@@ -80,7 +80,8 @@ class Rectangle():
         """Prints rectangle #'s unofficially"""
         if self.__width == 0 or self.__height == 0:
             return ""
-        rec = "\n".join(["#" * self.__width for rows in range(self.__height)])
+        rec = "\n".join([str(self.print_symbol) * self.__width
+                         for rows in range(self.__height)])
         return rec
 
     def __repr__(self):
