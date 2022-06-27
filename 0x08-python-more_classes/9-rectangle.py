@@ -93,17 +93,18 @@ class Rectangle():
         return "Rectangle({:d}, {:d})".format(self.width, self.height)
 
     @staticmethod
-    """Returns bigger or equal"""
     def bigger_or_equal(rect_1, rect_2):
-        if not isinstance(rect_1, Rectangle):
-            raise TypeError("rect_1 must be an instance of Rectangle")
-        if not isinstance(rect_2, Rectangle):
-            raise TypeError("rect_2 must be an instance of Rectangle")
-        if rect_1.area() >= rect_2.area():
-            return rect_1
-        return rect_2
+        """Return bigger area of given"""
+        if not isinstance(rect_1, Rectangle) or \
+           not isinstance(rect_2, Rectangle):
+            raise TypeError("{} must be an instance of Rectangle".
+                            format("rect_1" if not isinstance
+                                   (rect_1, Rectangle) else "rect_2"))
+        if rect_2.area() > rect_1.area():
+            return rect_2
+        return rect_1
 
     @classmethod
     def square(cls, size=0):
-        """Returns new instance of rectangle with parameters"""
+        """Returns new instance of rectangle width == height == size"""
         return cls(size, size)
