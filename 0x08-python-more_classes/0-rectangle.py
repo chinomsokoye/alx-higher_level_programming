@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-"""Module to Write an empty class
-Rectangle that defines a rectangle
+"""Module to import 0-rectangle
+Defines a rectangle
 """
 
 
-class Reectangle():
+class Rectangle():
     """Class to create rectangle
     Defines an empty rectangle
     """
