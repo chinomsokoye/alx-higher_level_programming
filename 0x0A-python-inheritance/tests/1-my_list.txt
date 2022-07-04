@@ -1,74 +1,37 @@
-# run test with python3 -m doctest -v ./tests/filename].txt
+# The 1-my_list module
+Using 'MyList'
 
-First import method to test
->>> MyList = __import__('1-my_list').MyList
+Import the class:
+       >>> MyList = __import__('1-my_list').MyList
 
-SUCCESS CASES:
+Tests:
+	>>> my_list = MyList()
+	>>> my_list
+	[]
 
-Test ints (assume all elements to be ints):
-     >>> my_list = MyList()
-     >>> my_list.append(3)
-     >>> my_list.append(50)
-     >>> my_list.append(-1)
-     >>> print(my_list)
-     [3, 50, -1]
-     >>> my_list.print_sorted()
-     [-1, 3, 50]
-     >>> print(my_list)
-     [3, 50, -1]
+	>>> my_list.append(1)
+	>>> my_list.append(4)
+	>>> my_list.append(2)
+	>>> my_list
+	[1, 4, 2]
 
-     >>> more_list = MyList()
-     >>> more_list.append(300)
-     >>> more_list.append(50)
-     >>> more_list.append(-1)
-     >>> print(more_list)
-     [300, 50, -1]
-     >>> more_list.print_sorted()
-     [-1, 50, 300]
-     >>> print(more_list)
-     [300, 50, -1]
+	>>> my_list.print_sorted()
+	[1, 2, 4]
+	>>> my_list
+	[1, 4, 2]
 
-     >>> 1 = MyList()
-     >>> 1.append(-300)
-     >>> 1.append(50)
-     >>> 1.append(-1)
-     >>> print(1)
-     [-300, 50, -1]
-     >>> id(1) is not id(1.print_sorted())
-     [-300, -1, 50]
-     True
+	>>> my_list = MyList([3, 6, 2])
+	>>> my_list
+	[3, 6, 2]
+	>>> my_list.print_sorted()
+	[2, 3, 6]
 
-Test with one element only:
-     >>> one = MyList()
-     >>> one.append(-9999)
-     >>> print(one)
-     [-9999]
-     >>> one.print_sorted()
-     [-9999]
-     >>> print(one)
-     [-9999]
+	>>> my_list = MyList("hello")
+	>>> my_list
+	['h', 'e', 'l', 'l', 'o']
+	>>> my_list.print_sorted()
+	['e', 'h', 'l', 'l', 'o']
 
-Test with no element:
-     >>> empty = MyList()
-     >>> print(empty)
-     []
-     >>> empty.print_sorted()
-     []
-
-Test tye, isinstance, issubclass:
-     >>> type(MyList())
-     <class '1-my_list.MyList'>
-
-     >>> isinstance(MyList, object)
-     True
-
-     >>> isinstance(MyList, list)
-     False
-
-     >>> issubclass(MyList, list)
-     True
-
-     >>> 'print_sorted' in dir(MyList)
-     True
-
-FAIL CASES:
+	>>> new_list = MyList()
+	>>> new_list.print_sorted()
+	[]
