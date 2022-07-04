@@ -7,4 +7,4 @@ Returns True if object is an instance of class
 
 def is_same_class(obj, a_class):
     """Defines function for is same instance"""
-    return type(obj) is a class else False
+    return True if type(obj) is a_class else False
