@@ -31,17 +31,17 @@ Tests:
 
 	>>> bg.integer_validator("average")
 	Traceback (most recent call last):
-	TypeError: integer_validator() missing 1 required positional argument: 'value'
+	TypeError: missing 1 required positional argument: 'value'
 
 	>>> bg.integer_validator()
 	Traceback (most recent call last):
-	TypeError: integer_validator() missing 2 required positional argument: 'name' and 'value'
+	TypeError: missing 2 positional argument: 'name' and 'value'
 
 	>>> bg.integer_validator("NaN", float('nan'))
 	Traceback (most recent call last):
 	TypeError: NaN must be an integer
 
-	>>> bg.integer_validator("Big", 10000000000000000000000000000000000000000000000000000)
+	>>> bg.integer_validator("Big", 100000000000000000000000000000)
 
 	>>> bg.integer_validator("age", (4,))
 	Traceback (most recent call last):
