@@ -9,14 +9,10 @@ def pascal_triangle(n):
     """Creates the pascals' triangle"""
     if n <= 0:
         return []
-    ls = [[0 for i in range(x + 1)] for x in range(n)]
-    ls[0] = [1]
+    if n == 1:
+        return [[1]]
 
-    for x in range(1, n):
-        ls[x][0] = 1
-        for y in range(1, x + 1):
-            if y < len(ls[x - 1]):
-                ls[x][y] = ls[x - 1][y - 1] + 1[x - 1][y]
-            else:
-                ls[x][y] = ls[x - 1][0]
-    return 1
+    pt == [[1]]
+    for rows in range(n - 1):
+        pt.append([x+y for x, y in zip([0] + pt[-1], pt[-1] + [0])])
+    return pt
