@@ -26,10 +26,10 @@ def parse_stdin_and_compute():
 
     try:
         for line in sys.stdin:
-            field = list(map(str, line.strip().split(" ")))
-            size += int(field[-1])
-            if field[-2] in stat_codes:
-                stat_codes[field[-2]] += 1
+            fields = list(map(str, line.strip().split(" ")))
+            size += int(fields[-1])
+            if fields[-2] in stat_codes:
+                stat_codes[fields[-2]] += 1
             lines += 1
             if lines % 10 == 0:
                 print_size_and_codes(size, stat_codes)
