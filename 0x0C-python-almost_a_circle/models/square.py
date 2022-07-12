@@ -17,17 +17,17 @@ class Square(Rectangle):
         super().__init__(size, size, x, y, id)
 
     def __str__(self):
-        """Return string representation of Square instance"""
-        st = "[Square] ({}) {}/{} - {}".format(
+        """Returns string representation"""
+        s = "[Square] ({}) {}/{} - {}".format(
             self.id, self.x, self.y, self.__width)
-        return st
+        return s
 
     @property
     def size(self):
         """Retrieves size attribute"""
         return self.__width
 
-    @width.setter
+    @size.setter
     def size(self, value):
         """Sets size attribute"""
         if type(value) is not int:
