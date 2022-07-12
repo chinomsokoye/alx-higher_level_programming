@@ -57,7 +57,7 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(s1.area(), 81)
         s2 = Square(4, 1, 2, 5)
         s2.update(7)
-        self.assertEqual(s1.id, 7)
+        self.assertEqual(s2.id, 7)
         f = io.StringIO()
         s3 = Square(4)
         with contextlib.redirect_stdout(f):
@@ -118,10 +118,10 @@ class TestSquare(unittest.TestCase):
         s1 = Square(9)
         with self.assertRaises(TypeError) as x:
             s1.update(2, 3, 4, "hello")
-        self.assertEqual("y must be an integer", str(x.exceptions))
+        self.assertEqual("y must be an integer", str(x.exception))
         with self.assertRaises(TypeError) as x:
             s1.update("hello", 8, 9)
-        self.assertEqual("id must be an integer", str(x.exceptions))
+        self.assertEqual("id must be an integer", str(x.exception))
 
     def test_14_0(self):
         """Test Square to_dictionary public method"""

@@ -37,7 +37,7 @@ class TestBase(unittest.TestCase):
         """Test for type and instance"""
         b6 = Base()
         self.assertEqual(type(b6), Base)
-        self.assertTrue(isinstance(b6), Base)
+        self.assertTrue(isinstance(b6, Base))
 
     def test_15_0(self):
         """Test with dict static method to_json_string"""

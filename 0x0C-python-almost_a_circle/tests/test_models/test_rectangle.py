@@ -40,7 +40,7 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r1.width, 10)
         self.assertEqual(r1.height, 2)
         self.assertEqual(r1.x, 0)
-        self.assertEqual(r1.y, 10)
+        self.assertEqual(r1.y, 0)
         r2 = Rectangle(10, 2, 4, 5, 24)
         self.assertEqual(r2.width, 10)
         self.assertEqual(r2.height, 2)
@@ -151,7 +151,7 @@ class TestRectangle(unittest.TestCase):
         with contextlib.redirect_stdout(f):
             r1.display()
         s = f.getvalue()
-        rest = "\n\n ##\n ##\n ##\n"
+        rest = "\n\n  ##\n  ##\n  ##\n"
         self.assertEqual(s, rest)
 
     def test_8_0(self):
@@ -166,7 +166,7 @@ class TestRectangle(unittest.TestCase):
         r1.update(89, 2, 3, 4)
         self.assertEqual(r1.x, 4)
         r1.update(89, 2, 3, 4, 5)
-        self.assertEqual(r1.x, 5)
+        self.assertEqual(r1.y, 5)
         r1.update()
         self.assertEqual(str(r1), "[Rectangle] (89) 4/5 - 2/3")
 
@@ -175,10 +175,10 @@ class TestRectangle(unittest.TestCase):
         r1 = Rectangle(10, 10, 10, 10)
         with self.assertRaises(TypeError) as x:
             r1.update("hi")
-        self.assertEqual("id must be an integer", str(x.exceptions))
+        self.assertEqual("id must be an integer", str(x.exception))
         with self.assertRaises(TypeError) as x:
             r1.update(65, 89, "hi")
-        self.assertEqual("height must be an integer", str(x.exceptions))
+        self.assertEqual("height must be an integer", str(x.exception))
 
     def test_9_0(self):
         """Test with kwargs public method update"""
