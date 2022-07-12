@@ -30,8 +30,8 @@ class Base:
         """Returns JSON string representation of list dictionaries"""
         if list_dictionaries is None or list_dictionaries == []:
             return "[]"
-        if (type(list_dictionaries) != list or
-            not all(type(x) == dict for x in list_dictionaries)):
+        if (type(list_dictionaries) != list or not all(
+                type(x) == dict for x in list_dictionaries)):
             raise TypeError("list_dictionaries must be a list of dictionaries")
         return json.dumps(list_dictionaries)
 
@@ -83,9 +83,8 @@ class Base:
     @classmethod
     def save_to_file_csv(cls, list_objs):
         """Serialize list_objs in csv format to a file"""
-        if (type(list_objs) != list and
-            list_objs is not None or
-            not all(isinstance(x, cls) for x in list_objs)):
+        if (type(list_objs) != list and list_objs is not None or not all(
+                isinstance(x, cls) for x in list_objs)):
             raise TypeError("list_objs must be a list of instances")
         filename = cls.__name__ + ".csv"
         with open(filename, 'w') as files:
