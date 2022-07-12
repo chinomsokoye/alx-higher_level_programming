@@ -112,7 +112,7 @@ class TestBase(unittest.TestCase):
         r0 = Rectangle(10, 7, 2, 8)
         r1 = Rectangle(2, 4)
         Rectangle.save_to_file([r0, r1])
-        rest = ('[{"y": 8, "x": 2, "id": 1, "width": 10, "height": 7}, ' +
+        rest = ('[{"y": 8, "x": 2, "id": 1, "width": 10, "height": 7},' +
                 ' {"y": 0, "x": 0, "id": 2, "width": 2, "height": 4}]')
         with open("Rectangle.json", "r") as files:
             self.assertEqual(len(files.read()), len(rest))
