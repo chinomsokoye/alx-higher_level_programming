@@ -17,7 +17,7 @@ class TestSquare(unittest, TestCase):
         """Initialize test cases"""
         Base._Base__nb_objects = 0
 
-    def test_10_a(self):
+    def test_10_0(self):
         """Test for attribute values Square class"""
         s0 = Square(1)
         self.assertEqual(s0.id, 1)
@@ -28,12 +28,12 @@ class TestSquare(unittest, TestCase):
         self.assertEqual(s1.y, 4)
         self.assertEqual(s1.id, 2)
 
-    def test_10_b(self):
+    def test_10_1(self):
         """Test __str_ representation"""
         s1 = Square(9, 4, 5, 6)
         self.assertEqual(str(s1), "[Square] (6) 4/5 - 9")
 
-    def test_10_c(self):
+    def test_10_2(self):
         """Test inheritance class Square"""
         s1 = Square(6)
         self.assertTrue(isinstance(s1, Rectangle))
@@ -43,7 +43,7 @@ class TestSquare(unittest, TestCase):
         self.assertTrue(issubclass(Square, Base))
         self.assertFalse(isinstance(Square, Base))
 
-    def test_10_d(self):
+    def test_10_3(self):
         """Test missing args Square class"""
         with self.assertRaises(TypeError) as x:
             s1 = Square()
@@ -51,7 +51,7 @@ class TestSquare(unittest, TestCase):
             "__init__() missing 1 required positional argument: 'size'", str(
                 x.exception))
 
-    def test_10_e(self):
+    def test_10_4(self):
         """Test Square for inheritance from Rectangle"""
         s1 = Square(9)
         self.assertEqual(s1.area(), 81)
@@ -66,14 +66,14 @@ class TestSquare(unittest, TestCase):
         rest = "####\n####\n####\n####\n"
         self.assertEqual(s, rest)
 
-    def test_11_a(self):
+    def test_11_0(self):
         """Test Square class for size attributes"""
         s1 = Square(8)
         self.assertEqual(s1.size, 8)
         s2 = Square(9, 8, 7, 2)
         self.assertEqual(s2.size, 9)
 
-    def test_11_b(self):
+    def test_11_1(self):
         """Test with wrong attributes Square class"""
         with self.assertRaises(TypeError) as x:
             s = Square("Hello", 2)
@@ -97,7 +97,7 @@ class TestSquare(unittest, TestCase):
             s = Square(2, 5, -5, 6)
         self.assertEqual("y must be >= 0", str(x.exception))
 
-    def test_12_a(self):
+    def test_12_0(self):
         """Test update Square public method"""
         s1 = Square(5)
         s1.update(10)
@@ -113,7 +113,7 @@ class TestSquare(unittest, TestCase):
         self.assertEqual(s1.id, 89)
         self.assertEqual(s1.y, 1)
 
-    def test_12_b(self):
+    def test_12_1(self):
         """Test Square with wrong types public method update"""
         s1 = Square(9)
         with self.assertRaises(TypeError) as x:
@@ -123,7 +123,7 @@ class TestSquare(unittest, TestCase):
             s1.update("hello", 8, 9)
         self.assertEqual("id must be an integer", str(x.exceptions))
 
-    def test_14_a(self):
+    def test_14_0(self):
         """Test Square to_dictionary public method"""
         s1 = Square(10, 2, 1)
         s1_dictionary = s1.to_dictionary()
@@ -137,7 +137,7 @@ class TestSquare(unittest, TestCase):
         self.assertEqual(type(s2_dictionary), dict)
         self.assertFalse(s1 == s2)
 
-    def test_14_b(self):
+    def test_14_1(self):
         """Test with wrong args public method to_dictionary"""
         s = "to_dictionary() takes 1 positional argument but 2 were given"
         with self.assertRaises(TypeError) as x:
