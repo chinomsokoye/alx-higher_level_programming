@@ -112,33 +112,33 @@ class TestBase(unittest.TestCase):
         r0 = Rectangle(10, 7, 2, 8)
         r1 = Rectangle(2, 4)
         Rectangle.save_to_file([r0, r1])
-        rest = ('[{"y": 8, "x": 2, "id": 1, "width": 10, "height": 7},' +
-                ' {"y": 0, "x": 0, "id": 2, "width": 2, "height": 4}]')
-        with open("Rectangle.json", "r") as files:
-            self.assertEqual(len(files.read()), len(rest))
+        res = ('[{"y": 8, "x": 2, "id": 1, "width": 10, "height": 7},' +
+               ' {"y": 0, "x": 0, "id": 2, "width": 2, "height": 4}]')
+        with open("Rectangle.json", "r") as f:
+            self.assertEqual(len(f.read()), len(res))
         Rectangle.save_to_file(None)
-        rest = "[]"
-        with open("Rectangle.json", "r") as files:
-            self.assertEqual(files.read(), rest)
+        res = "[]"
+        with open("Rectangle.json", "r") as f:
+            self.assertEqual(f.read(), res)
         os.remove("Rectangle.json")
         Rectangle.save_to_file([])
-        with open("Rectangle.json", "r") as files:
-            self.assertEqual(files.read(), rest)
+        with open("Rectangle.json", "r") as f:
+            self.assertEqual(f.read(), res)
         s0 = Square(9, 3, 1, 12)
         s1 = Square(6, 7)
         Square.save_to_file([s0, s1])
-        rest = ('[{"id": 12, "size": 9, "x": 3, "y": 1}, ' +
-                ' {"id": 3, "size": 6, "x": 7, "y": 0}]')
-        with open("Square.json", "r") as files:
-            self.assertEqual(len(files.read()), len(rest))
+        res = ('[{"id": 12, "size": 9, "x": 3, "y": 1},' +
+               ' {"id": 3, "size": 6, "x": 7, "y": 0}]')
+        with open("Square.json", "r") as f:
+            self.assertEqual(len(f.read()), len(res))
         Square.save_to_file(None)
-        rest = "[]"
-        with open("Square.json", "r") as files:
-            self.assertEqual(files.read(), rest)
+        res = "[]"
+        with open("Square.json", "r") as f:
+            self.assertEqual(f.read(), res)
         os.remove("Square.json")
         Square.save_to_file([])
-        with open("Square.json", "r") as files:
-            self.assertEqual(files.read(), rest)
+        with open("Square.json", "r") as f:
+            self.assertEqual(f.read(), res)
 
     def test_16_1(self):
         """Test with errors class method save_to_file"""
@@ -287,15 +287,15 @@ class TestBase(unittest.TestCase):
         r0 = Rectangle(10, 7, 2, 8)
         r1 = Rectangle(2, 4)
         Rectangle.save_to_file_csv([r0, r1])
-        rest = "id,width,height,x,y\n1,10,7,2,8\n2,2,4,0,0\n"
-        with open("Rectangle.csv", "r") as files:
-            self.assertEqual(len(files.read()), len(rest))
+        res = "id,width,height,x,y\n1,10,7,2,8\n2,2,4,0,0\n"
+        with open("Rectangle.csv", "r") as f:
+            self.assertEqual(len(f.read()), len(res))
         s0 = Square(9, 3, 1, 12)
         s1 = Square(6, 7)
         Square.save_to_file_csv([s0, s1])
-        rest = "id,size,x,y\n12,9,3,1\n3,6,7,0\n"
-        with open("Square.csv", "r") as files:
-            self.assertEqual(len(files.read()), len(rest))
+        res = "id,size,x,y\n12,9,3,1\n3,6,7,0\n"
+        with open("Square.csv", "r") as f:
+            self.assertEqual(len(f.read()), len(res))
 
     def test_20_1(self):
         """Test with errors class method save_to_file_csv"""
