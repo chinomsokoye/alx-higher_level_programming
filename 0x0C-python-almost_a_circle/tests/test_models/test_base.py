@@ -287,7 +287,7 @@ class TestBase(unittest.TestCase):
         r0 = Rectangle(10, 7, 2, 8)
         r1 = Rectangle(2, 4)
         Rectangle.save_to_file_csv([r0, r1])
-        res = "id,width,height,x,y\n1,10,7,2,8\n2,2,4,0,0\n"
+        res = "id,width,height,x,y\n0,10,7,2,8\n0,2,4,0,0\n"
         with open("Rectangle.csv", "r") as f:
             self.assertEqual(len(f.read()), len(res))
         s0 = Square(9, 3, 1, 12)
