@@ -19,3 +19,5 @@ _For this project, we are expected to look at the concepts:_
 * [Pycodestyle - Style Guide for Python Code](https://www.pypi.org/project/pycodestyle)
 
 ## General
+
+### Learning
