@@ -1,6 +1,6 @@
 -- SQL script
 -- creates the database and table in the MySQL server
--- description id, state_id, name
+-- description id, state_id, name in table data
 
 CREATE DATABASE IF NOT EXISTS hbtn_0d_usa;
 USE hbtn_0d_usa;
