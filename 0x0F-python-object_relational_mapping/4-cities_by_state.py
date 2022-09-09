@@ -13,8 +13,8 @@ if __name__ == '__main__':
     # create cursor to execute queries using SQL
     # joins two tables to retrieve cities
     cur = db.cursor()
-    cur.execute("SELECT cities.id, cities.name, states.name FROM states\
-INNER JOIN cities ON states.id = cities.state_id ORDER BY cities.id ASC")
+    cur.execute("SELECT cities.id, cities.name, states.name FROM cities\
+JOIN states ON states.id = cities.state_id ORDER BY cities.id ASC")
     rows = cur.fetchall()
     for row in rows:
         print(row)
