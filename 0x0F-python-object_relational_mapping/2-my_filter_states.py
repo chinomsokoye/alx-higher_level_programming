@@ -14,7 +14,7 @@ if __name__ == '__main__':
                          passwd=sys.argv[2], db=sys.argv[3])
 
     # create cursor to execute queries using SQL
-    # match argument given
+    # match the argument given
     cur = db.cursor()
     cur.execute("SELECT * FROM states WHERE name LIKE BINARY '{}'\
 ORDER BY states.id ASC".format(sys.argv[4]))
